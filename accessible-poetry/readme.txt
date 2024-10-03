@@ -3,9 +3,9 @@
 Contributors: Userwayorg, digisphere, codenroll, accessiblewp
 Tags: accessibility, WCAG, a11y, Section 508, WAI, aria, accessibility widget, accessibility plugin, text size, contrast, keyboard navigation, color saturation, legible fonts, disabled, blind, visually impaired, toolbar, toolkit, tabindex, user1, web accessibility, accessible, נגישות, הנגשת אתר, נגישות אתרים
 Requires at least: 4.1
-Tested up to: 6.1
-Stable tag: 5.3.0
-Version: 5.3.0
+Tested up to: 6.6.2
+Stable tag: 5.4.0
+Version: 5.4.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,9 +31,6 @@ Add a professional accessibility toolbar to your WordPress site and make it easi
 4. Go to the "Toolbar" admin page under the new "Accessibility" admin menu item and follow the instructions there.
 
 == Changelog ==
-= 5.3.0
-* Adds UserWay notification banner on plugin activation.
-
 = 5.1.4 =
 * Adds an option to stick the toolbar and the button to the bottom.
 * Fix broken social links on the plugin dashboard.

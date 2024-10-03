@@ -5,7 +5,7 @@
  * Description: Add an accessibility toolbar to your WordPress site and make it easier for users with disabilities.
  * Author: Codenroll
  * Author URI: https://www.codenroll.co.il/
- * Version: 5.3.0
+ * Version: 5.4.0
  * Text Domain: acwp
  * License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */

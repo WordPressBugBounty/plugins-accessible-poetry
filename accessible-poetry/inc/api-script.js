@@ -5,7 +5,8 @@ function sendDataIfAvailable() {
     events: [ {
       "event": "AccessibleWP-CTA-click",
       "content": "user click button Install UserWay",
-    }]
+  } ]
+    
   };
 
   // Converting Data to JSON String
@@ -44,3 +45,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.error('Button with ID "plugin-button-notice" not found.');
     }
 });
+

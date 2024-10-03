@@ -117,7 +117,7 @@ function acwp_toolbar_footer() {
 /**
  * Toolbar Toggler
  */
-function acwp_toggler($key = '', $label = '', $icon){
+function acwp_toggler($key = '', $label = '', $icon = ''){
     $style = get_option('acwp_toolbar_style');
     ?>
     <div class="acwp-toggler acwp-toggler-<?php echo $key;?>">

@@ -9,6 +9,7 @@ function acc_userway_enqueue_styles() {
     // Enqueue the stylesheet
     wp_enqueue_style('acc-userway-styles');
 }
+add_action('admin_enqueue_scripts', 'acc_userway_enqueue_styles');
 
 function acc_userway_enqueue_script() {
     // Enqueue the JavaScript file with dependencies on jQuery and any other scripts
@@ -16,7 +17,16 @@ function acc_userway_enqueue_script() {
 }
 add_action('admin_enqueue_scripts', 'acc_userway_enqueue_script');
 
-add_action('admin_enqueue_scripts', 'acc_userway_enqueue_styles');
+function enqueue_frontend_script() {
+    // Enqueue the JavaScript file on the front-end
+    wp_enqueue_script('plugin-frontend-js', plugin_dir_url(__FILE__) . 'frontend.js', array('jquery'), '1.0', true);
+
+    // Pass the site URL to the script
+    wp_localize_script('plugin-frontend-js', 'AccessibleWPData', array(
+        'siteUrl' => get_site_url(),
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_frontend_script');
 
 // Hook into plugin activation to add custom admin notice
 function acc_userway_activation_notice() {
@@ -33,7 +43,7 @@ function acc_userway_admin_notice() {
         <div class="notice notice-warning is-dismissible" id="plugin-activation-notice">
             <div class="notice__wrap">
                 <div class="notice__wrap-col notice__wrap-col--first">
-                    <img src="<?php echo $banner_logo; ?>" alt="UserWay Logo" style="width: 174px; height: 100%; margin-right: 10px; margin-top: 8px; margin-left: 7px;">
+                    <img src="<?php echo $banner_logo; ?>" alt="UserWay Logo" style="width: 174px; margin-right: 10px; margin-top: 8px; margin-left: 7px;">
                     <div class="notice__wrap--text">
                         <p class="usw_banner_title"><?php _e("Enhance Your Website's Accessibility with UserWay!", "userway"); ?></p>
                         <p class="usw_banner_text usw_banner_text--mobile-hide"><?php _e("We're excited to offer AccessibleWP users advanced features and dedicated support with UserWay. </br>Upgrade now to take advantage of our comprehensive accessibility tools.", "userway"); ?></p>
@@ -41,6 +51,7 @@ function acc_userway_admin_notice() {
                 </div>
                 
                 <div class="notice__wrap-col notice__wrap-col--last">
+                    <!-- <a class="lm_button"  href="https://userway.org/" target="_blank"><?php _e('Learn more', 'userway'); ?></a> -->
                     <a class="uw_button" id="plugin-button-notice" href="https://wordpress.org/plugins/userway-accessibility-widget/" target="_blank" aria-label="Install UserWay Plugin"><?php _e('Install UserWay', 'userway'); ?></a>
                 </div>
             </div>
